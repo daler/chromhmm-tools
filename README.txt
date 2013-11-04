@@ -1,8 +1,10 @@
 
+`chromhmm_signalize.py`
+-----------------------
 Starting from bigWig or bedGraph files, this program helps construct input
 files for ChromHMM's BinarizeSignal program.
 
-ChromHMM's BinarizeSignal expects input data of this form:
+ChromHMM's BinarizeSignal expects input data of this form::
 
     {celltype}  {chromosome}
     {mark1}     {mark2}     {mark3}
@@ -26,7 +28,8 @@ The "combine" program merges interpolated files into a single file suitable for
 use by ChromHMM's BinarizeSignal program (and the rest of the ChromHMM
 workflow).
 
-REBIN:
+REBIN
+-----
 
     The config file is a tab-delimited file with 3 required and 1 optional
     field::
@@ -47,7 +50,8 @@ REBIN:
     extension next to the original bigWig.  If this file already exists, it
     will be used without doing the conversion again.
 
-COMBINE:
+COMBINE
+-------
 
     After running `rebin`, run `combine` to combine all files of the same
     celltype and chromosome into a single "_signal" file, which can be directly
@@ -55,7 +59,8 @@ COMBINE:
     the same config file used for `rebin`.
 
 
-GENERAL WORKFLOW:
+GENERAL WORKFLOW
+----------------
 
     * Write a config file
         (see above for format; here called `config.txt`)
