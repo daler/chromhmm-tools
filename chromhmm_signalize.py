@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 """
 `chromhmm_signalize.py`
@@ -197,7 +197,7 @@ def rebin(configfile, genome, binsize=200, quiet=False, binned_dir='binned'):
 
             # use the midpoint of each bedgraph feature
             x.append(i.start + (i.stop - i.start) / 2)
-            y.append(int(i[-1]))
+            y.append(float(i[-1]))
             chrom = i.chrom
 
         # last one
@@ -275,6 +275,6 @@ def combine(configfile, binned_dir='binned', binsize=200,
 
 if __name__ == "__main__":
     parser = argh.ArghParser()
-    parser.usage = __doc__
+    #parser.usage = __doc__
     parser.add_commands([rebin, combine])
     parser.dispatch()
